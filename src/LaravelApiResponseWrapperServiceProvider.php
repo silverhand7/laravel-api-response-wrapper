@@ -11,18 +11,8 @@ class LaravelApiResponseWrapperServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // $this->app->bind(GetResponseContract::class, function (Application $app) {
-        //     return new GetResponse();
-        // });
         $this->app->bind(GetResponseContract::class, GetResponse::class);
 
-        $this->app->bind('api-response-wrapper', ApiResponseWrapper::class);
-
-        // $this->app->bind(ApiResponseWrapper::class, function (Application $app) {
-        //     $getResponse = new GetResponse();
-        //     return new ApiResponseWrapper($getResponse);
-        // });
-
-        // $this->app->bind(ApiResponseWrapperFacade::class, ApiResponseWrapper::class);
+        $this->app->bind(ApiResponseWrapperFacade::class, ApiResponseWrapper::class);
     }
 }

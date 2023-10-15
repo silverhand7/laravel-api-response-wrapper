@@ -9,6 +9,6 @@ class ApiResponseWrapper extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'api-response-wrapper';
+        return ApiResponseWrapperApp::class;
     }
 }
