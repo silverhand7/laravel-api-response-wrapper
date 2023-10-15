@@ -1,0 +1,17 @@
+{
+    "name": "silverhand7/laravel-api-response-wrapper",
+    "description": "Wrapper for API response in Laravel",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Silverhand7\\LaravelApiResponseWrapper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "silverhand7",
+            "email": "refojunior5@gmail.com"
+        }
+    ],
+    "require": {}
+}
