@@ -14,13 +14,17 @@
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "illuminate/support": "^10.28.0"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Silverhand7\\LaravelApiResponseWrapper\\LaravelApiResponseWrapperServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "ApiResponseWrapper": "Silverhand7\\LaravelApiResponseWrapper\\Facades\\ApiResponseWrapper"
+            }
         }
     }
 }

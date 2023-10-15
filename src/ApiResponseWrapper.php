@@ -8,7 +8,7 @@ use Silverhand7\LaravelApiResponseWrapper\Responses\GetResponse;
 class ApiResponseWrapper
 {
     public function __construct(
-        public GetResponse $getResponse
+        public GetResponseContract $getResponse
     ) {}
 
     public function get()
