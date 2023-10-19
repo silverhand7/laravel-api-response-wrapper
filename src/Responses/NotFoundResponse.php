@@ -11,6 +11,7 @@ class NotFoundResponse implements NotFoundResponseContract
     {
         return response()
             ->json([
+                'success' => false,
                 'message' => $message ?? "Data is not found",
             ], 404);
     }

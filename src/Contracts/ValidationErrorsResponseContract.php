@@ -6,5 +6,5 @@ use Illuminate\Http\JsonResponse;
 
 interface ValidationErrorsResponseContract
 {
-    public function handle(?string $message, $errors): JsonResponse;
+    public function handle(?string $message, ?array $errors): JsonResponse;
 }

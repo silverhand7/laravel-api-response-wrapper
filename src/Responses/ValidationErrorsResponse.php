@@ -7,10 +7,11 @@ use Silverhand7\LaravelApiResponseWrapper\Contracts\ValidationErrorsResponseCont
 
 class ValidationErrorsResponse implements ValidationErrorsResponseContract
 {
-    public function handle(?string $message, $errors): JsonResponse
+    public function handle(?string $message, ?array $errors): JsonResponse
     {
         return response()
             ->json([
+                'success' => false,
                 'message' => $message,
                 'errors' => $errors,
             ], 422);
