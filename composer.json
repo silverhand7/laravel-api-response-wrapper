@@ -24,7 +24,7 @@
                 "Silverhand7\\LaravelApiResponseWrapper\\ApiResponseWrapperServiceProvider"
             ],
             "aliases": {
-                "ApiResponseWrapper": "Silverhand7\\LaravelApiResponseWrapper\\Facades\\ApiResponseWrapperFacade"
+                "ApiResponseWrapper": "Silverhand7\\LaravelApiResponseWrapper\\Facades\\ApiResponseWrapper"
             }
         }
     }
