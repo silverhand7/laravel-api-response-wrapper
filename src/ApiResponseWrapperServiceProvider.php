@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Silverhand7\LaravelApiResponseWrapper\Responses\CreatedResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\GetResponse;
 
-class LaravelApiResponseWrapperServiceProvider extends ServiceProvider
+class ApiResponseWrapperServiceProvider extends ServiceProvider
 {
     public function register()
     {
