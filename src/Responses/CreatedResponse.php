@@ -8,8 +8,8 @@ use Silverhand7\LaravelApiResponseWrapper\Contracts\CreatedResponseContract;
 class CreatedResponse implements CreatedResponseContract
 {
     public function handle(
+        string|null $message = null,
         array|null $data = null,
-        string|null $message = null
     ): JsonResponse
     {
         return response()
