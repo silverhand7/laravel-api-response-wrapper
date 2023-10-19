@@ -13,16 +13,16 @@ class ApiResponseWrapper
     ) {}
 
     public function get(
+        string|null $message = null,
         array|null $data = null,
-        string|null $message = null
     ) {
-        return $this->getResponse->handle($data, $message);
+        return $this->getResponse->handle($message, $data);
     }
 
     public function created(
+        string|null $message = null,
         array|null $data = null,
-        string|null $message = null
     ) {
-        return $this->createdResponse->handle($data, $message);
+        return $this->createdResponse->handle($message, $data);
     }
 }
