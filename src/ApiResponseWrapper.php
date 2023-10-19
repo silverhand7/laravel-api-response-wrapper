@@ -4,12 +4,14 @@ namespace Silverhand7\LaravelApiResponseWrapper;
 
 use Silverhand7\LaravelApiResponseWrapper\Contracts\CreatedResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\GetResponseContract;
+use Silverhand7\LaravelApiResponseWrapper\Contracts\NotFoundResponseContract;
 
 class ApiResponseWrapper
 {
     public function __construct(
         public GetResponseContract $getResponse,
         public CreatedResponseContract $createdResponse,
+        public NotFoundResponseContract $notFoundResponse,
     ) {}
 
     public function get(
@@ -17,6 +19,12 @@ class ApiResponseWrapper
         array|null $data = null,
     ) {
         return $this->getResponse->handle($message, $data);
+    }
+
+    public function notFound(
+        ?string $message = null,
+    ) {
+        return $this->notFoundResponse->handle($message);
     }
 
     public function created(

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Silverhand7\LaravelApiResponseWrapper\Responses\CreatedResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\GetResponse;
+use Silverhand7\LaravelApiResponseWrapper\Responses\NotFoundResponse;
 
 class ApiResponseWrapperServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class ApiResponseWrapperServiceProvider extends ServiceProvider
             return new ApiResponseWrapper(
                 $app->make(GetResponse::class),
                 $app->make(CreatedResponse::class),
+                $app->make(NotFoundResponse::class),
             );
         });
     }
