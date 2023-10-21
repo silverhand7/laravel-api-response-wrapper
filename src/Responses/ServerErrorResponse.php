@@ -4,9 +4,9 @@ namespace Silverhand7\LaravelApiResponseWrapper\Responses;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
-use Silverhand7\LaravelApiResponseWrapper\Contracts\ValidationErrorsResponseContract;
+use Silverhand7\LaravelApiResponseWrapper\Contracts\ServerErrorResponseContract;
 
-class ValidationErrorsResponse implements ValidationErrorsResponseContract
+class ServerErrorResponse implements ServerErrorResponseContract
 {
     public function handle(?string $message, Collection|array|null $errors = null): JsonResponse
     {
@@ -15,6 +15,6 @@ class ValidationErrorsResponse implements ValidationErrorsResponseContract
                 'success' => false,
                 'message' => $message,
                 'errors' => $errors,
-            ], 422);
+            ], 500);
     }
 }

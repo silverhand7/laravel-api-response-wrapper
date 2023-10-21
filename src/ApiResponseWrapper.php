@@ -5,6 +5,7 @@ namespace Silverhand7\LaravelApiResponseWrapper;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\CreatedResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\GetResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\NotFoundResponseContract;
+use Silverhand7\LaravelApiResponseWrapper\Contracts\ServerErrorResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\ValidationErrorsResponseContract;
 
 class ApiResponseWrapper
@@ -14,6 +15,7 @@ class ApiResponseWrapper
         public CreatedResponseContract $createdResponse,
         public NotFoundResponseContract $notFoundResponse,
         public ValidationErrorsResponseContract $validationErrorsResponse,
+        public ServerErrorResponseContract $serverErrorResponse,
     ) {}
 
     public function get(
@@ -41,5 +43,12 @@ class ApiResponseWrapper
         $errors = null
     ) {
         return $this->validationErrorsResponse->handle($message, $errors);
+    }
+
+    public function serverError(
+        ?string $message = null,
+        $errors = null
+    ) {
+        return $this->serverErrorResponse->handle($message, $errors);
     }
 }
