@@ -18,5 +18,21 @@ composer require silverhand7/laravel-api-response-wrapper
 ```
 
 ## Available Response
-ApiResponseWrapper::get(?string $message, $data)
+### get 
+```
+ApiResponseWrapper::get($message, $data)
+```
+| Params   | type              |
+|----------|-------------------|
+| $message | ?string           |
+| $data    | array\|Collection |
+
   
+### created 
+```
+ApiResponseWrapper::created($message, $data)
+```
+| Params   | type              |
+|----------|-------------------|
+| $message | ?string           |
+| $data    | array\|Collection |
