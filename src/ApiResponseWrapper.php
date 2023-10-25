@@ -2,6 +2,9 @@
 
 namespace Silverhand7\LaravelApiResponseWrapper;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Collection;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\CreatedResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\DeletedResponseContract;
 use Silverhand7\LaravelApiResponseWrapper\Contracts\GetResponseContract;
@@ -26,7 +29,7 @@ class ApiResponseWrapper
 
     public function get(
         string|null $message = null,
-        array|null $data = null,
+        Collection|Model|JsonResource|array|null $data = null,
     ) {
         return $this->getResponse->handle($message, $data);
     }
