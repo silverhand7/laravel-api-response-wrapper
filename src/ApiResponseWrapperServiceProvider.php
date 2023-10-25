@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Silverhand7\LaravelApiResponseWrapper\Responses\CreatedResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\DeletedResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\GetResponse;
+use Silverhand7\LaravelApiResponseWrapper\Responses\NoContentResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\NotFoundResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\ServerErrorResponse;
 use Silverhand7\LaravelApiResponseWrapper\Responses\UpdatedResponse;
@@ -25,6 +26,7 @@ class ApiResponseWrapperServiceProvider extends ServiceProvider
                 $app->make(NotFoundResponse::class),
                 $app->make(ValidationErrorsResponse::class),
                 $app->make(ServerErrorResponse::class),
+                $app->make(NoContentResponse::class),
             );
         });
     }
